@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c0a">
+  <meta name="description" content="HURMA - каталог CFG, Visuals и Resource Packs для Minecraft.">
+  <title>HURMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#catalog" aria-label="HURMA, на главную">
+      <span class="brand-mark"><span class="brand-logo" style="-webkit-mask-image:var(--logo-url);mask-image:var(--logo-url)"></span></span>
+      <span>HURMA</span>
+    </a>
+    <nav class="topnav" aria-label="Основная навигация">
+      <button class="nav-link" data-action="profile">Профиль</button>
+      <button class="nav-link" data-action="support">Поддержка</button>
+      <a class="nav-link" href="https://discord.gg/JYDedjMP8G" target="_blank" rel="noreferrer">Discord</a>
+      <button class="nav-link notification-link" data-action="notifications">
+        <span id="notificationBadge" class="notification-badge" hidden></span>
+        Уведомления
+      </button>
+    </nav>
+    <div class="top-actions">
+      <button id="themeButton" class="icon-button" aria-label="Сменить тему" title="Сменить тему">◐</button>
+      <button id="accountButton" class="account-button" data-action="auth">Войти</button>
+      <button id="menuButton" class="menu-button" aria-label="Открыть меню">Меню</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="catalog">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Твоя сборка. Твои правила.</p>
+        <h1>Собери Minecraft<br><em>без лишнего.</em></h1>
+        <p class="hero-text">Проверенные конфиги, визуалы и ресурспаки в одном месте. Быстрый поиск, честные оценки и прямые загрузки.</p>
+        <div class="hero-actions">
+          <button class="primary-button" data-scroll="collection">Открыть каталог <span>↘</span></button>
+          <a class="ghost-button" href="https://discord.gg/JYDedjMP8G" target="_blank" rel="noreferrer">Наш Discord</a>
+        </div>
+      </div>
+      <div class="hero-art reveal"></div>
+    </section>
+
+    <section class="collection" id="collection">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> Каталог</p>
+          <h2>Выбери свой стиль</h2>
+        </div>
+        <p>Контент от команды HURMA и авторов сообщества.</p>
+      </div>
+
+      <div class="catalog-toolbar reveal">
+        <div class="type-tabs" role="tablist" aria-label="Категории">
+          <button class="type-tab active" data-type="client" role="tab">Soft</button>
+          <button class="type-tab" data-type="visual" role="tab">Visuals</button>
+          <button class="type-tab" data-type="resourcepack" role="tab">Resource Packs</button>
+        </div>
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Название, описание или автор" autocomplete="off">
+        </label>
+      </div>
+
+      <div id="catalogStatus" class="catalog-status">Загружаем каталог...</div>
+      <div id="catalogGrid" class="catalog-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="manifest reveal">
+      <span class="manifest-number">01</span>
+      <p>Никакого визуального шума.</p>
+      <span class="manifest-divider"></span>
+      <p>Только то, что работает.</p>
+      <span class="manifest-number right"><span class="manifest-logo" style="-webkit-mask-image:var(--logo-url);mask-image:var(--logo-url)"></span></span>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark"><span class="brand-logo" style="-webkit-mask-image:var(--logo-url);mask-image:var(--logo-url)"></span></span><strong>HURMA</strong></div>
+    <p>Каталог контента для Minecraft.<br>Сделано с вниманием к деталям.</p>
+    <div class="footer-links"><a href="#collection">Каталог</a><a href="https://discord.gg/JYDedjMP8G">Discord</a></div>
+    <small>© 2026 HURMA</small>
+  </footer>
+
+  <div id="modalRoot" class="modal-root" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
