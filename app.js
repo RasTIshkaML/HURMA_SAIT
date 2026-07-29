@@ -1,3 +1,4 @@
+window.HURMA_CONFIG = { apiBaseUrl: "https://hurmaserver-production.up.railway.app/" };
 (() => {
   "use strict";
 
